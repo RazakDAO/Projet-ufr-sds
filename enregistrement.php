@@ -6,6 +6,7 @@
   <title>Formulaire de connexion en HTML & CSS - Frenchcoder</title>
   <link rel="stylesheet" href="Styles/style-enregistrement.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+      <link rel="stylesheet" href="Styles/boostrap-5.2.3-dist/boostrap-5.2.3-dist/css/bootstrap.min.css">
 </head>
 
 <?php
@@ -45,7 +46,8 @@ try {
 
 
 <body>
-  <form method="post" action="">
+
+<form method="post" action="">
     <h1>Ajout d'etudiant</h1>
     <div class="social-media">
     <img src="Images/image1.png" alt="">
@@ -70,5 +72,7 @@ try {
       <button type="submit">Se connecter</button>
     </div>
   </form>
+
+
 </body>
 </html>

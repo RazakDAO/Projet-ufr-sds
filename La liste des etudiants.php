@@ -31,59 +31,30 @@ try {
     echo 'Erreur : ' . $e->getMessage();
 }
 ?>
-<div id="viewport">
-  <!-- Sidebar -->
-  <div id="sidebar">
-    <header>
-      <a href="enregistrement.php"><img src="Images/image1.png" alt="" class="img"></a>
+
+<header class="topnav" id="myTopnav">
+        <a href="enregistrement.php"><img class="logo" src="Images/image1.png" alt="Smiley face"></a>
+        <div class="navlist" id="navlist">
+            <a class="cursor0" href="#home">&nbsp</a>
+            <a class="navoption active" href="#home">Accueil</a>
+            <a class="navoption" href="enregistrement.php">Ajouter un étudiant</a>
+            <a class="navoption" href="#contact">Modification</a>
+            <a class="navoption" href="#about">Rechercher</a>
+            <a class="navoption" href="#about">afficher la liste des étudiants</a>
+            <a href="javascript:void(0);" class="icon" id="hamburger">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </header>
-    <ul class="nav">
-      <li>
-        <a href="#">
-          <i class="zmdi zmdi-view-dashboard"></i> Dashboard
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="zmdi zmdi-link"></i> Shortcuts
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="zmdi zmdi-widgets"></i> Overview
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="zmdi zmdi-calendar"></i> Events
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="zmdi zmdi-info-outline"></i> About
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="zmdi zmdi-settings"></i> Services
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="zmdi zmdi-comment-more"></i> Contact
-        </a>
-      </li>
-    </ul>
-  </div>
-  <!-- Content -->
-  <div id="content">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <img src="Images/image1.png" alt="" class="img">
-      </div>
-    </nav>
-    <div class="container-fluid">
-    <table>
+    
+    <section>
+    <h1>My ufr-sds-online</h1>
+    <p>L'application web officiel de l'UFR-SDS de l'Universté Joseph Ky ZERBO</p>
+    </section>
+
+
+    <div class="table-responsive">
+    <table class="table">
   <thead>
     <tr>
       <th>Nom</th>
@@ -108,8 +79,82 @@ try {
   </tbody>
 </table>
     </div>
+
+<footer class="footer-area footer--light">
+  <div class="footer-big">
+
+  <!-- end /.footer-big -->
+
+  <div class="mini-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright-text">
+            <p>Copyright © 2023
+              <a href="#">Simplon Burkina</a>. All rights reserved. Created by
+              <a href="#">Razak DAO</a>
+            </p>
+          </div>
+
+          <div class="go_top">
+            <span class="icon-arrow-up"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</footer>
+
+<script>
+    $( document ).ready(function() {
+
+var opcionesnav = $('.navoption').length;
+var clickhamb=0;
+
+$("#hamburger").click(function(){
+    clickhamb = 1;
+    var header = $("#myTopnav");
+    if (header[0].classList.length == 1) {
+        header.addClass ("responsive");
+        $("header").height((opcionesnav+1)*48);
+        $(".navlist a:not(.icon)").css("display", "block");
+        setTimeout(
+            function()
+            {
+                $(".navlist a:not(.icon)").css("transform", "translateX(0px)");
+            }, 50);
+
+    } else {
+        $(".navlist a:not(.icon)").css("transform", "translateX(600px)");
+        header.height(48);
+        setTimeout(
+            function()
+            {
+                header.removeClass("responsive");
+                header.height(48);
+                $(".navlist a:not(.icon)").css("display", "none");
+            }, 1600);
+    }
+});
+
+
+$(window).on('resize', function(){
+    console.log(clickhamb);
+    if (($(window).width() > 600) && (clickhamb==1)){
+        console.log(clickhamb + "     " + $(window).width());
+        $("#myTopnav").height(48);
+        $(".navlist a:not(.icon)").css("display", "block");
+        setTimeout(
+            function()
+            {
+                $(".navlist a:not(.icon)").css("transform", "translateX(0px)");
+            }, 500);
+    }
+});
+
+});
+</script>
+
 
 </body>
 </html>

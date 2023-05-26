@@ -25,12 +25,13 @@ table {
 }	
 
 th {
-	background-color: red;
-	border-left: 1px solid #555;
-	border-right: 1px solid #777;
-	border-top: 1px solid #555;
-	border-bottom: 1px solid #333;
-	box-shadow: inset 0 1px 0 #999;
+	background-color:#eb7371;
+    ;
+	border-left: 1px solid #d4cfcf;
+	border-right: 1px solid #d4cfcf;
+	border-top: 1px solid #d4cfcf;
+	border-bottom: 1px solid #d4cfcf;
+	box-shadow: inset 0 1px 0 #ffffff;
 	color: #fff;
   font-weight: bold;
 	padding: 10px 15px;
@@ -108,82 +109,222 @@ tbody:hover tr:hover td {
 	text-shadow: 0 1px 0 #fff;
 }
 .inscription{
+    color: #E2021A;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    min-width: 250px;
+    overflow-x: hidden;
+}
+
+@media screen and (min-width: 1500px) {
+    header{
+        padding-left: 15% !important;
+        padding-right: 15% !important;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    header{
+        padding-left: 11%;
+        padding-right: 11%;
+    }
+}
+
+
+
+header{
+    height: 48px;
+    transition: height 2s, padding 2s;
+
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #16151B;
+}
+
+.topnav .navlist{
+    float: right;
+}
+
+.navlist{
+    /*transform: translateX(47px);*/
+    transition: transform 5s;
+}
+
+.navlist a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navlist a:hover:not(:first-child) {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    /* background-color: #282727; */
+    color: white;
+}
+
+.topnav a.icon {
+    position: absolute;
+    right: -47px;
+    transition: transform 3s;
+    top: 0px;
+}
+
+.logo{
+    height: 40px;
+    float: left;
+    padding: 5px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.cursor0{
+    cursor: default;
+}
+
+.navlist a:not(.icon){
+    display: block;
+    transition: transform 2s, opacity 1s, visibility 1s;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .navlist a:not(.icon) {
+        transform: translateX(500px);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .topnav a.icon {
+        visibility: visible;
+        float: right;
+        transform: translateX(-47px);
+    }
+
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        top: 0;
+        transform: translateX(-47px);
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        transform: translateX(0px);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .topnav.responsive .navlist{
+        float: none;
+    }
+}
+
+        /* Rendre le tableau responsive */
+        .table-responsive {
+            overflow-x: auto;
+            max-width: 100%;
+        }
+
+        /* Styles de base du tableau */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Styles des cellules du tableau */
+        .table th,
+        .table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* Styles spécifiques pour les petits écrans */
+        @media screen and (max-width: 600px) {
+            .table th,
+            .table td {
+                white-space: nowrap;
+            }
+            .table-responsive {
+                overflow-x: scroll;
+            }
+        }
+
+
+        @import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700);
+body {
+ font-family:Rubik,sans-serif;
+ position:relative;
+ font-weight:400;
+ font-size:15px
+}
+
+.mini-footer {
+ background:#16151B;
+ text-align:center;
+ padding:32px 0
+}
+.mini-footer p {
+ margin:0;
+ line-height:26px;
+ font-size:15px;
+ color:#999
+}
+.mini-footer p a {
+ color:#5867dd
+}
+.mini-footer p a:hover {
+ color:#34bfa3
+}
+.widget-about img {
+ display:block;
+ margin-bottom:30px
+}
+.widget-about p {
+ font-weight:400
+}
+.widget-about .contact-details {
+ margin:30px 0 0 0
+}
+.widget-about .contact-details li {
+ margin-bottom:10px
+}
+.widget-about .contact-details li:last-child {
+ margin-bottom:0
+}
+.widget-about .contact-details li span {
+ padding-right:12px
+}
+.widget-about .contact-details li a {
+ color:#5867dd
+}
+@media (max-width:991px) {
+ .footer-menu {
+  padding-left:0
+ }
+}
+h1{
     color: #eb7371;
+    text-align:center;
 }
-
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
-/* Toggle Styles */
-
-#viewport {
-  padding-left: 250px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-#content {
-  width: 100%;
-  position: relative;
-  margin-right: 0;
-}
-
-/* Sidebar Styles */
-
-#sidebar {
-  z-index: 1000;
-  position: fixed;
-  left: 250px;
-  width: 250px;
-  height: 100%;
-  margin-left: -250px;
-  overflow-y: auto;
-  background: #37474F;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-#sidebar header {
-  background-color: #263238;
-  font-size: 20px;
-  line-height: 52px;
-  text-align: center;
-}
-
-#sidebar header a {
-  color: #fff;
-  display: block;
-  text-decoration: none;
-}
-
-#sidebar header a:hover {
-  color: #fff;
-}
-
-#sidebar .nav{
-  
-}
-
-#sidebar .nav a{
-  background: none;
-  border-bottom: 1px solid #455A64;
-  color: #CFD8DC;
-  font-size: 14px;
-  padding: 16px 24px;
-}
-
-#sidebar .nav a:hover{
-  background: none;
-  color: #ECEFF1;
-}
-
-#sidebar .nav a i{
-  margin-right: 16px;
-}
-.img{
-    width: 20%;
-    height: 20%;
+p{
+    text-align:center;
 }
